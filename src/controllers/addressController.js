@@ -2,7 +2,6 @@ const addressModel = require('../models/addressModel')
 
 async function createAddress(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const data = req.body
         const createdAddress = await addressModel.create(data)
         return res.status(201).send(createdAddress)
@@ -14,7 +13,6 @@ async function createAddress(req, res) {
 
 async function getAddress(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const AddressData = await addressModel.find()
         return res.status(200).send(AddressData)
     }
@@ -25,7 +23,6 @@ async function getAddress(req, res) {
 
 async function getAddressById(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const Id = req.params.Id
         const AddressData = await addressModel.findById({ _id: Id })
         return res.status(200).send(AddressData)
@@ -37,7 +34,6 @@ async function getAddressById(req, res) {
 
 async function updateAddress(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const data = req.body
         const id = req.params.addressId
 
@@ -51,7 +47,6 @@ async function updateAddress(req, res) {
 
 async function deleteAddress(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const id = req.params.addressId
 
         await addressModel.findOneAndDelete({ _id: id })

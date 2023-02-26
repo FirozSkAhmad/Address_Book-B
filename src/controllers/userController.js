@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 
 async function createUser(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const data = req.body
 
         const hashPassword = await bcrypt.hash(data.password, 10)
@@ -21,7 +20,6 @@ async function createUser(req, res) {
 
 async function userLogin(req, res) {
     try {
-        res.header("Access-Control-Allow-Origin", "*")
         const data = req.body
         const { email, password } = data
 

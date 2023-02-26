@@ -8,9 +8,7 @@ const app = express()
 
 require('dotenv').config()
 app.use(cors({
-    origin: [
-        "*", "https://address-book-wtk8.onrender.com"
-    ]
+    origin: "*"
 }))
 
 app.use(express.json())
