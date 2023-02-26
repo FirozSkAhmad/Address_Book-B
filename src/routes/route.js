@@ -5,9 +5,6 @@ const { createUser, userLogin } = require('../controllers/userController')
 const { authentication, authorization } = require('../middlewares/auth')
 const { createAddress, getAddress,getAddressById, updateAddress, deleteAddress } = require('../controllers/addressController')
 
-router.get('/test', (req, res) => {
-    return res.status(200).send({ msg: "working" })
-})
 
 router.post('/createUser', createUser)
 router.post('/login', userLogin)
